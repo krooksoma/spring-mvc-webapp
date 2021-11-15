@@ -23,7 +23,7 @@ public class RegistrationController {
     @PostMapping("/registeruser")
     @ResponseStatus(HttpStatus.OK)
 //   @Valid letting the application know that JSR-380 validation is being used in the Bean
-//    BindingResult parameter will be used to populated and error in case of validation failure(binding)
+//    BindingResult parameter will be used to populate an error in case of validation failure(binding)
 //    must follow @modelAttribute
     public String registerUser(@Valid @ModelAttribute("newuser") User user, BindingResult result, Model model){
         System.out.println("inside user registration controller");

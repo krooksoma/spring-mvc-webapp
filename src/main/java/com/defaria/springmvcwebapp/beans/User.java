@@ -14,18 +14,18 @@ public class User {
     @Id
     private int Id;
 //do not forget to add dependency spring-boot-starter-validation
-    @Size(min=6, message = "username cannot be less than 6 characters long.")
+    @Size(min=6, message = "{username.min.length}")
     private String username;
 
-    @Pattern(regexp= "((?=.*[A-Z])|(?=.*[0-9]).{6,10})", message = "it needs at least one uppercase and a number. between 6-10 characters")
+    @Pattern(regexp= "((?=.*[A-Z])|(?=.*[0-9]).{6,10})", message = "{user.password.min.length}")
     private String password;
 
-    @NotEmpty(message = "It cannot be empty")
+    @NotEmpty(message = "{user.firstname.not.empty}")
     private String firstName;
     private String lastName;
     private String dateOfBirth;
 
-    @NotNull(message = "cannot be left empty")
+    @NotNull(message = "{user.gender.not.empty}")
     private String activity;
     private String gender;
 

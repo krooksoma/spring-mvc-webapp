@@ -35,10 +35,6 @@ public class HomeController {
         return "register";
     }
 
-    @GetMapping("*")
-    public String notFound(){
-        return "error";
-    }
 
     @ModelAttribute("newuser")
     public User getDefaultUser(){
