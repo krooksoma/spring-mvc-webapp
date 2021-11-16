@@ -36,18 +36,18 @@ public class HomeController {
         return "register";
     }
 
-    @ModelAttribute("newuser")
-    public User getDefaultUser(){
-        return new User();
-    }
-
-    @ModelAttribute("genderItems")
-    public List<String> genderGenderItems(){
-        return Arrays.asList("Male", "Female", "Non-binary", "Other");}
-
-    @ModelAttribute("login")
-    public Login getDefaultLogin(){
-        return new Login();
-        }
+//    @ModelAttribute("newuser")
+//    public User getDefaultUser(){
+//        return new User();
+//    }
+//
+//    @ModelAttribute("genderItems")
+//    public List<String> genderGenderItems(){
+//        return Arrays.asList("Male", "Female", "Non-binary", "Other");}
+//
+//    @ModelAttribute("login")
+//    public Login getDefaultLogin(){
+//        return new Login();
+//        }
 
 }
