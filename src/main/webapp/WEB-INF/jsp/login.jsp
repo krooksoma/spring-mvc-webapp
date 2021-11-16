@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -33,11 +34,11 @@
    	<section id="login" class="section">
 		<div class="container tagline">
 			<em>LOGIN USER</em>
-			<form action="#" method="post" >
-				<label>Username</label> <input type="text" name="username"/><br />
-			    <label>Password</label> <input type="password" name="password"/><br />
+			<form:form action="/login" method="post" modelAttribute="login" >
+				<label>Username</label> <input type="text" path="username"/><br />
+			    <label>Password</label> <input type="password" path="password"/><br />
 			     <input type="submit" value="Login">
-			</form>
+			</form:form>
 			 <a class="card-title" href="/gotoregistration">Register new user? Click here</a>
 		</div>
 	</section>
@@ -50,7 +51,7 @@
 			<nav class="nav" role="navigation">
 				<div class="container nav-elements">
 					<div class="branding">
-						<a href="#home"><img src="images/hpluslogo.svg"
+						<a href="/home"><img src="images/hpluslogo.svg"
 							alt="Logo - H Plus Sports"></a>
 						<p class="address">
 							100 Main Street<br> Seattle, WA 98144

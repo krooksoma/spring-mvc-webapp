@@ -1,5 +1,6 @@
 package com.defaria.springmvcwebapp.controllers;
 
+import com.defaria.springmvcwebapp.beans.Login;
 import com.defaria.springmvcwebapp.beans.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,6 @@ public class HomeController {
         return "register";
     }
 
-
     @ModelAttribute("newuser")
     public User getDefaultUser(){
         return new User();
@@ -43,6 +43,11 @@ public class HomeController {
 
     @ModelAttribute("genderItems")
     public List<String> genderGenderItems(){
-        return Arrays.asList("Male", "Female", "Non-binary", "Other");
-    }
+        return Arrays.asList("Male", "Female", "Non-binary", "Other");}
+
+    @ModelAttribute("login")
+    public Login getDefaultLogin(){
+        return new Login();
+        }
+
 }
