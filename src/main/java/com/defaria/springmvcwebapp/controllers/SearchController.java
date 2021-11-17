@@ -2,7 +2,6 @@ package com.defaria.springmvcwebapp.controllers;
 
 import com.defaria.springmvcwebapp.beans.Product;
 import com.defaria.springmvcwebapp.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +16,13 @@ import java.util.List;
 
 
 @Controller
-public class SeachController {
+public class SearchController {
 
 //    make sure repository DI is deposited in this controller
-    @Autowired
+
     private ProductRepository productRepository;
 
-    @Autowired
+
     private AsyncTaskExecutor executor;
 
     @GetMapping("/search")

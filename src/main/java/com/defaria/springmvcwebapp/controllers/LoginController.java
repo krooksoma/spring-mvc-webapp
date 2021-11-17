@@ -9,12 +9,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+//when using sessionAttributes you must make sure the same name already exists inside the controller
 @Controller
+@SessionAttributes("login")
 public class LoginController {
 
     @Autowired
     private UserRepository userRepository;
+
+
 
     @PostMapping("/login")
     public String login(@ModelAttribute("login") Login login){
@@ -22,7 +27,7 @@ public class LoginController {
         if(user == null){
             throw new ApplicationException("User not Found");
         }
-        return "search";
+        return "profile";
     }
 //    once exception is thrown it will come inside handleException method, and it will go to error page
 //    @ExceptionHandler(ApplicationException.class)
