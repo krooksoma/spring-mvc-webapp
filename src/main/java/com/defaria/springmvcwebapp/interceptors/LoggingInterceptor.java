@@ -2,6 +2,7 @@ package com.defaria.springmvcwebapp.interceptors;
 
 import org.springframework.web.context.request.WebRequestInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter;
 
 import javax.servlet.http.Cookie;
@@ -9,11 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
-public class LoggingInterceptor extends WebRequestHandlerInterceptorAdapter {
-
-    public LoggingInterceptor(WebRequestInterceptor requestInterceptor) {
-        super(requestInterceptor);
-    }
+public class LoggingInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -39,15 +36,5 @@ public class LoggingInterceptor extends WebRequestHandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         System.out.println("In postHandle interceptor");
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        super.afterCompletion(request, response, handler, ex);
-    }
-
-    @Override
-    public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        super.afterConcurrentHandlingStarted(request, response, handler);
     }
 }

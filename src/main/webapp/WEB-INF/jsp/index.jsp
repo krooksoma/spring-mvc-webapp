@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <head>
     <meta charset="UTF-8">
     <title>HPlus</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="<spring:theme code='styleSheet'/>" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 <header id="home" class="header">
     <nav class="nav" role="navigation">
+        <div>
+        <a href="?theme=client-darktheme"><button class="btn">Dark Theme</button></a>
+        <a href="?theme=client-lighttheme"><button class="btn">Light Theme</button></a>
+        </div>
         <div class="container nav-elements">
             <div class="branding">
                 <a href="#home"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
