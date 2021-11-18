@@ -1,5 +1,7 @@
 package com.defaria.springmvcwebapp.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -14,5 +16,9 @@ public class ApplicationExceptionHandler {
         return "error";
     }
 
+    @ExceptionHandler(LoginFailedException.class)
+    public ResponseEntity handleLoginFailure(LoginFailedException lfex){
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(lfex.getMessage());
+    }
 
 }
